@@ -5,15 +5,15 @@ if text then
 tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data)
 if data.id_ then 
 if data.id_ ~= bot_id then 
-local TshakeChengPhoto = database:get(bot_id.."Tshake:Cheng:Photo"..data.id_)
+local SourceXChengPhoto = database:get(bot_id.."SourceX:Cheng:Photo"..data.id_)
 if not data.profile_photo_ then 
-if TshakeChengPhoto then 
+if SourceXChengPhoto then 
 send(msg.chat_id_, msg.id_, "حذف كل صوره الحلو 😂👌🏻")
-database:del(bot_id.."Tshake:Cheng:Photo"..data.id_) 
+database:del(bot_id.."SourceX:Cheng:Photo"..data.id_) 
 end
 end
 if data.profile_photo_.big_.persistent_id_ then 
-if TshakeChengPhoto ~= data.profile_photo_.big_.persistent_id_ then 
+if SourceXChengPhoto ~= data.profile_photo_.big_.persistent_id_ then 
 local Text = {
   "شكو غيرت صورتك  يا حلو ",
   "منور طالع حلو عل صوره جديده",
@@ -24,7 +24,7 @@ local Text = {
 }
 send(msg.chat_id_, msg.id_,Text[math.random(#Text)])
 end  
-database:set(bot_id.."Tshake:Cheng:Photo"..data.id_, data.profile_photo_.big_.persistent_id_) 
+database:set(bot_id.."SourceX:Cheng:Photo"..data.id_, data.profile_photo_.big_.persistent_id_) 
 end
 end
 end
@@ -32,4 +32,4 @@ end,nil)
 end
 
 end
-return {Tshake = ChengPhoto}
+return {SourceX = ChengPhoto}
